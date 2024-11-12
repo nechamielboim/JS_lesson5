@@ -33,8 +33,21 @@ function sortbycountry()
         st+=arr[i].title+" "+arr[i].artist+" "+arr[i].country+" "+arr[i].company+" "+arr[i].price+" "+arr[i].year+"</br>"       
     }
     document.getElementById("p1").innerHTML=st
-
 }
+
+function findbetweenyears()
+{
+    let y1=document.getElementById("y1").value
+    let y2=document.getElementById("y2").value
+    const disk=catalog.find((item)=>item.year>y1&&item.year<y2)
+    st=disk.title+" "+disk.artist+" "+disk.country+" "+disk.company+" "+disk.price+" "+disk.year
+    document.getElementById("p1").innerHTML=st
+}
+
+
+
+
+
 
 
 
