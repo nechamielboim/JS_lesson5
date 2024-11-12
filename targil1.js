@@ -69,7 +69,17 @@ function add()
     year:document.getElementById("year").value=" "
 }
 
-
+function remove()
+{
+    let id=document.getElementById("n").value
+    let index=catalog.findIndex(item=>item.id=id)
+    catalog.splice(index,1)
+    alert("הפריט הוסר בהצלחה")
+    document.getElementById("t").innerHTML=" "
+    for (let i = 0; i < catalog.length; i++) {
+        mytable(catalog[i])
+    }
+}
 
 
 
