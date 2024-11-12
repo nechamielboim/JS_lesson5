@@ -6,13 +6,12 @@ for (let i = 0; i < catalog.length; i++) {
 let st=" "
 function sortbyname()
 {
-   
+    document.getElementById("t").innerHTML=" "
     let name=document.getElementById("1").value
     const arr=catalog.filter(item=>item.title.includes(name))
     for (let i = 0; i < arr.length; i++) {
-        st+=arr[i].title+" "+arr[i].artist+" "+arr[i].country+" "+arr[i].company+" "+arr[i].price+" "+arr[i].year+"</br>"       
+        mytable(arr[i])
     }
-    document.getElementById("p1").innerHTML=st
 } 
 
 
@@ -26,22 +25,27 @@ for (const item of arrcountries) {
 }
 function sortbycountry()
 {
+    document.getElementById("t").innerHTML=" "
     st=" "
     let country=event.target.value
     const arr=catalog.filter(item=>item.country===country)
     for (let i = 0; i < arr.length; i++) {
-        st+=arr[i].title+" "+arr[i].artist+" "+arr[i].country+" "+arr[i].company+" "+arr[i].price+" "+arr[i].year+"</br>"       
+        mytable(arr[i])
     }
-    document.getElementById("p1").innerHTML=st
 }
 
 function findbetweenyears()
 {
+    document.getElementById("t").innerHTML=" "
     let y1=document.getElementById("y1").value
     let y2=document.getElementById("y2").value
     const disk=catalog.find((item)=>item.year>y1&&item.year<y2)
-    st=disk.title+" "+disk.artist+" "+disk.country+" "+disk.company+" "+disk.price+" "+disk.year
-    document.getElementById("p1").innerHTML=st
+    mytable(disk)
+}
+
+function mytable(d)
+{
+    document.getElementById("t").innerHTML+="<tr>"+"<td>"+d.title+"</td>"+"<td>"+d.artist+"</td>"+"<td>"+d.country+"</td>"+"<td>"+d.company+"</td>"+"<td>"+d.price+"</td>"+"<td>"+d.year+"</td>"+"</tr>"    
 }
 
 
