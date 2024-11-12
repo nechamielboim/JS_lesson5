@@ -23,3 +23,14 @@ function func2()
 }
 console.log(func2())
 
+function func3()
+{
+    const numbers=[-5,25,-19,0,16,0]
+    const result=numbers.reduce((prev,cur)=>{ 
+        if(cur>0)
+          prev.push(Math.sqrt(cur))
+        return prev
+    },[])
+    return result
+}
+console.log(func3())
