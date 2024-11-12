@@ -48,7 +48,26 @@ function mytable(d)
     document.getElementById("t").innerHTML+="<tr>"+"<td>"+d.title+"</td>"+"<td>"+d.artist+"</td>"+"<td>"+d.country+"</td>"+"<td>"+d.company+"</td>"+"<td>"+d.price+"</td>"+"<td>"+d.year+"</td>"+"</tr>"    
 }
 
-
+function add()
+{
+    const disk={
+        id:catalog[catalog.length-1].id+1,
+        title:document.getElementById("title").value,
+        artist:document.getElementById("artist").value,
+        country:document.getElementById("country").value,
+        company:document.getElementById("company").value,
+        price:document.getElementById("price").value,
+        year:document.getElementById("year").value
+    }
+    catalog.push(disk)
+    alert("הפריט נוסף בהצלחה")
+    title:document.getElementById("title").value=" "
+    artist:document.getElementById("artist").value=" "
+    country:document.getElementById("country").value=" "
+    company:document.getElementById("company").value=" "
+    price:document.getElementById("price").value=" "
+    year:document.getElementById("year").value=" "
+}
 
 
 
